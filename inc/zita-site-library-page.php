@@ -21,6 +21,9 @@ if ( ! class_exists( 'Zita_Site_Library_Page' ) ) {
 			}
 
 		add_action( 'init', __CLASS__ . '::init_admin_settings', 99 );
+		add_shortcode('zita_site',  __CLASS__ . '::menu_callback'); 
+		add_action( 'zita_site_library_cate', __CLASS__ . '::zita_site_library_cate_menu', 10, 2 );
+
 		}
 
 
@@ -63,6 +66,50 @@ static public function add_admin_menu() {
 			}
 		}
 
+
+	static public	function zita_site_library_cate_menu(){ ?>
+			<div id="zita-site-library-filters" class="wp-filter hide-if-no-js">
+
+	<div class="section-left">
+
+			<!-- All Filters -->
+			<div class="filter-count" style="display:none;">
+				<span class="count"></span>
+			</div>
+					<div class="filters-wrap">
+				<div id="zita-site-library-page-builder">
+				<select id='zsl-demo-type' class="cs-select cs-skin-elastic zsl-demo-type" style="display:none;">
+					<option value="" disabled selected>Select Builder</option>
+					<option value='elementor' data-class="builder-elementor"><?php _e('Elementor','zita-site-library') ?></option>
+					<option value='brizy' data-class="builder-brizy"><?php _e('Brizy','zita-site-library') ?></option>
+					<option value='beaver' data-class="builder-beaver"><?php _e('Beaver','zita-site-library') ?></option>
+
+<!-- 					<option value='siteorigin' data-class="builder-siteorigin"><php _e('SiteOrigin','zita-site-library') ?></option>
+ -->					</select>
+				</div>			
+			</div>
+		</div> <!-- Section Left -->
+
+		<div class="section-right">
+			<div class="filters-wrap">
+				<div id="zita-site-library-category"></div>
+				<!-- <php if(get_option( 'zita_license_key')!=''){ ?>
+					<a href='themes.php?page=zita-site-library&site-key'   class="zita-site-key-link activated"><php _e('Pro Template Activated','zita-site-library'); ?></a>
+				<php } else{ ?>
+					<a href='themes.php?page=zita-site-library&site-key' class="zita-site-key-link"><php _e('Activate Pro Websites','zita-site-library'); ?></a>
+				<php } ?> -->
+			</div>
+			<div class="search-form" style="display:none;">
+				<label class="screen-reader-text" for="wp-filter-search-input"><?php _e( 'Search Sites', 'zita-site-library' ); ?> </label>
+				<input placeholder="<?php _e( 'Search Sites...', 'zita-site-library' ); ?>" type="search" aria-describedby="live-search-desc" id="wp-filter-search-input" class="wp-filter-search">
+			</div>
+
+		</div>
+	</div>
+	
+			<?php 
+}
+
 		/**
 		 * Menu callback
 		 *
@@ -77,7 +124,16 @@ static public function add_admin_menu() {
 		}
 
 		static public function general_page() {
+			?>
+						<div class="zita-sites-menu-page-wrapper">
+
+<?php
 			require_once ZITA_SITE_LIBRARY_DIR . 'inc/admin-tmpl.php';
+			?>
+
+						</div>
+
+<?php
 
 		}
 }

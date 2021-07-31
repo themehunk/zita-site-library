@@ -7,45 +7,8 @@ defined( 'ABSPATH' ) or exit;
 ?>
 <div class="wrap" id="zita-site-library-admin">
 
-	<div id="zita-site-library-filters" class="wp-filter hide-if-no-js">
 
-		<div class="section-left">
-
-			<!-- All Filters -->
-			<div class="filter-count" style="display:none;">
-				<span class="count"></span>
-			</div>
-			<div class="filters-wrap">
-				<div id="zita-site-library-page-builder">
-				<select id='zsl-demo-type' class="cs-select cs-skin-elastic zsl-demo-type" style="display:none;">
-					<option value="" disabled selected>Select Builder</option>
-					<option value='elementor' data-class="builder-elementor"><?php _e('Elementor','zita-site-library') ?></option>
-					<option value='brizy' data-class="builder-brizy"><?php _e('Brizy','zita-site-library') ?></option>
-					<option value='beaver' data-class="builder-beaver"><?php _e('Beaver','zita-site-library') ?></option>
-
-<!-- 					<option value='siteorigin' data-class="builder-siteorigin"><php _e('SiteOrigin','zita-site-library') ?></option>
- -->					</select>
-				</div>			
-			</div>
-		</div> <!-- Section Left -->
-
-		<div class="section-right">
-			<div class="filters-wrap">
-				<div id="zita-site-library-category"></div>
-				<!-- <php if(get_option( 'zita_license_key')!=''){ ?>
-					<a href='themes.php?page=zita-site-library&site-key'   class="zita-site-key-link activated"><php _e('Pro Template Activated','zita-site-library'); ?></a>
-				<php } else{ ?>
-					<a href='themes.php?page=zita-site-library&site-key' class="zita-site-key-link"><php _e('Activate Pro Websites','zita-site-library'); ?></a>
-				<php } ?> -->
-			</div>
-			<div class="search-form" style="display:none;">
-				<label class="screen-reader-text" for="wp-filter-search-input"><?php _e( 'Search Sites', 'zita-site-library' ); ?> </label>
-				<input placeholder="<?php _e( 'Search Sites...', 'zita-site-library' ); ?>" type="search" aria-describedby="live-search-desc" id="wp-filter-search-input" class="wp-filter-search">
-			</div>
-
-		</div>
-
-	</div>
+		<?php do_action( 'zita_site_library_cate'); ?>
 
 	<?php do_action( 'zita_site_library_before_site_grid' ); ?>
 

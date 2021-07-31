@@ -106,8 +106,7 @@ if ( ! class_exists( 'Zita_Site_Library_Load' ) ) :
 		 * @return void
 		 */
 		public function admin_enqueue( $hook = '' ) {
-
-			if ( 'appearance_page_zita-site-library' !== $hook ) {
+			if ( 'appearance_page_zita-site-library' !== $hook && 'appearance_page_zita' !== $hook) {
 				return;
 			}
 
