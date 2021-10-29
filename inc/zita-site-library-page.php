@@ -82,10 +82,7 @@ static public function add_admin_menu() {
 					<option value="" disabled selected>Select Builder</option>
 					<option value='elementor' data-class="builder-elementor"><?php _e('Elementor','zita-site-library') ?></option>
 					<option value='brizy' data-class="builder-brizy"><?php _e('Brizy','zita-site-library') ?></option>
-					<option value='beaver' data-class="builder-beaver"><?php _e('Beaver','zita-site-library') ?></option>
-
-<!-- 					<option value='siteorigin' data-class="builder-siteorigin"><php _e('SiteOrigin','zita-site-library') ?></option>
- -->					</select>
+					</select>
 				</div>			
 			</div>
 		</div> <!-- Section Left -->

@@ -4,7 +4,7 @@ Donate link: https://wpzita.com/
 Tags: demo, theme demos, one click import
 Requires at least: 5.5
 Tested up to: 5.8
-Stable tag: 1.5.10
+Stable tag: 1.5.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,9 @@ Zita site library is a addon plugin for Zita WordPress theme. This plugin contai
 4. View website.
 
 == Changelog ==
+
+= Version 1.5.11 28/10/2021 =
+* beaver plugin remove. 
 
 = Version 1.5.10 31/07/2021 =
 * bug fixed.
