@@ -9,14 +9,14 @@ if ( ! class_exists( 'ThemeHunk_Notify' ) ){
 class ThemeHunk_Notify{
 
     function __construct(){
+
 		if(isset($_GET['notice-disable']) && $_GET['notice-disable'] == true){
 		add_action('admin_init', array($this,'set_cookie'));
 		}
 
-
 		if(!isset($_COOKIE['thc_time'])) {
-
 			add_action( 'admin_notices', array($this,'notify'));
+    	    add_action( 'admin_enqueue_scripts', array($this,'enqueue') );
 
 		}
 
@@ -25,6 +25,13 @@ class ThemeHunk_Notify{
 		}
 
 	}
+
+	function enqueue(){
+		wp_enqueue_style( 'zita-site-library-notice', ZITA_SITE_LIBRARY_URI.'notify/assets/css/notice.css', array(), '1.0.0' );
+
+	}
+
+
 
 
 	function set_cookie() { 
@@ -55,15 +62,12 @@ class ThemeHunk_Notify{
 	function notify(){
 		  $my_theme = wp_get_theme();
 		  $theme =  esc_html( $my_theme->get( 'TextDomain' ) );
-		  		  $display = isset($_GET['notice-disable'])?'none':'block';
+		  $display = isset($_GET['notice-disable'])?'none':'block';
 
-		?>
-		  <div class="notice th-notice-slide-wrap" style="display:<?php echo $display; ?>;">
-		    <a href="?notice-disable=1" style="float: right; margin-top: 5px; color: #b30000;" class="notice-hide dashicons dashicons-dismiss dashicons-dismiss-icon"></a>
-		    <iframe src="https://themehunk.com/feature/plugin-notify/?theme=<?php echo $theme; ?>" height="300" width="100%"></iframe>
-		</div>
+          require_once ZITA_SITE_LIBRARY_DIR . 'notify/notify-html.php'; 
 
-<?php } 
+
+ } 
 
 
 }
