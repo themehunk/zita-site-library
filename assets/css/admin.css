@@ -309,6 +309,9 @@ font-size:15px;
 line-height:25px;
 }
 
+.zita-site-library-theme-preview .theme-install-overlay iframe{
+  max-width: 100%;
+}
 @media only screen and (min-width: 2000px){
 	.zitademo.themes{
 		width: 17.6% !important;
