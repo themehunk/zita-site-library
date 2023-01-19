@@ -3,8 +3,8 @@ Contributors: wpzita
 Donate link: https://wpzita.com/
 Tags: demo, theme demos, one click import
 Requires at least: 5.5
-Tested up to: 6.0
-Stable tag: 1.6.0
+Tested up to: 6.1
+Stable tag: 1.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,8 @@ Zita site library is a addon plugin for Zita WordPress theme. This plugin contai
 4. View website.
 
 == Changelog ==
+= Version 1.6.1 19/01/2023 =
+* buy link change
 
 = Version 1.6.0 28/05/2022 =
 * Preview css added in importer.
