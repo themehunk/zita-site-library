@@ -866,6 +866,7 @@ var ZitaSSEImport = {
 				data : {
 					'action'  : 'zita-import-demo-data',
 					'api_url' : apiURL,
+					'zita_nonce': zitaAdmin.zita_nonce
 				},
 			})
 			.fail(function( jqXHR ){
@@ -1020,6 +1021,7 @@ var ZitaSSEImport = {
 			//	dataType: 'json',
 				data : {
 					action : 'zita-site-library-import-close',
+					zita_nonce: zitaAdmin.zita_nonce
 				},
 				beforeSend: function() {
 				$('.button-hero.zita-demo-import').text( zitaAdmin.unique.importComplete );
@@ -1057,6 +1059,8 @@ var ZitaSSEImport = {
 				data : {
 					action          : 'zita-site-library-import-customizer',
 					customizer_data : ZitaTemplateAdmin.customizer_data,
+					zita_nonce: zitaAdmin.zita_nonce
+
 				},
 				beforeSend: function() {
 			$('.button-hero.zita-demo-import').text( zitaAdmin.unique.importCustomizer );
@@ -1087,6 +1091,7 @@ var ZitaSSEImport = {
 				data : {
 					'action'  : 'zita-import-xml',
 					'xml_url' : ZitaTemplateAdmin.xml_url,
+					'zita_nonce': zitaAdmin.zita_nonce
 				},
 			beforeSend: function() {
 					$('.button-hero.zita-demo-import').text( zitaAdmin.unique.importXMLPreparing );
@@ -1158,6 +1163,7 @@ var ZitaSSEImport = {
 				data : {
 					action       : 'zita-site-library-import-options',
 					options_data : ZitaTemplateAdmin.options_data,
+					zita_nonce: zitaAdmin.zita_nonce
 				},
 				beforeSend: function() {
 					$('.button-hero.zita-demo-import').text( zitaAdmin.unique.importingOptions );
@@ -1193,6 +1199,7 @@ var ZitaSSEImport = {
 				data : {
 					action       : 'zita-site-library-import-widgets',
 					widgets_data : ZitaTemplateAdmin.widgets_data,
+					zita_nonce: zitaAdmin.zita_nonce
 				},
 				beforeSend: function() {
 					$('.button-hero.zita-demo-import').text( zitaAdmin.unique.importingWidgets );

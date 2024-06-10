@@ -204,6 +204,12 @@ class Zita_Site_Library_Ajax{
 		 */
 		function import_demo_data() {
 
+			if ( ! isset( $_POST['zita_nonce'] ) || ! wp_verify_nonce( $_POST['zita_nonce'], 'zita_site_nonce' ) ) {
+				wp_send_json_error( __( 'wp nonce not verify', 'zita-site-library' ) );
+				wp_die();
+			}
+	
+
 			if ( ! current_user_can( 'customize' ) ) {
 				wp_send_json_error( __( 'You have not "customize" access to import the Zita site library.', 'zita-site-library' ) );
 			}
@@ -233,6 +239,17 @@ class Zita_Site_Library_Ajax{
  */
 
 		function import_xml_data($wxr_url) {
+
+			if ( ! isset( $_POST['zita_nonce'] ) || ! wp_verify_nonce( $_POST['zita_nonce'], 'zita_site_nonce' ) ) {
+				wp_send_json_error( __( 'wp nonce not verify', 'zita-site-library' ) );
+				wp_die();
+			}
+	
+
+			if ( ! current_user_can( 'customize' ) ) {
+				wp_send_json_error( __( 'You have not "customize" access to import the Zita site library.', 'zita-site-library' ) );
+			}
+
 
 			$xml_url = ( isset( $_REQUEST['xml_url'] ) ) ? urldecode( $_REQUEST['xml_url'] ) : '';
 
@@ -264,6 +281,18 @@ class Zita_Site_Library_Ajax{
 		 */
 		function import_customizer_settings() {
 
+			
+			if ( ! isset( $_POST['zita_nonce'] ) || ! wp_verify_nonce( $_POST['zita_nonce'], 'zita_site_nonce' ) ) {
+				wp_send_json_error( __( 'wp nonce not verify', 'zita-site-library' ) );
+				wp_die();
+			}
+	
+			if ( ! current_user_can( 'customize' ) ) {
+				wp_send_json_error( __( 'You have not "customize" access to import the Zita site library.', 'zita-site-library' ) );
+			}
+
+
+
 			$customizer_data = ( isset( $_POST['customizer_data'] ) ) ? $this->recursive_sanitize_text_field((array) json_decode( stripcslashes( $_POST['customizer_data'] ), 1 )) : '';
 
 			if ( $customizer_data ) {
@@ -278,6 +307,16 @@ class Zita_Site_Library_Ajax{
 		}
 
 		function import_option_data(){
+			if ( ! isset( $_POST['zita_nonce'] ) || ! wp_verify_nonce( $_POST['zita_nonce'], 'zita_site_nonce' ) ) {
+				wp_send_json_error( __( 'wp nonce not verify', 'zita-site-library' ) );
+				wp_die();
+			}
+	
+			if ( ! current_user_can( 'customize' ) ) {
+				wp_send_json_error( __( 'You have not "customize" access to import the Zita site library.', 'zita-site-library' ) );
+			}
+			
+
 			 $options_data = ( isset( $_POST['options_data'] ) ) ? $this->recursive_sanitize_text_field((array) json_decode( stripcslashes( $_POST['options_data'] ), 1 )) : '';
 			 if ( isset( $options_data ) ) {
 				$options_importer = Zita_Site_Library_Options_Import::instance();
@@ -298,6 +337,18 @@ class Zita_Site_Library_Ajax{
 		 */
 		function import_widgets() {
 
+
+			if ( ! isset( $_POST['zita_nonce'] ) || ! wp_verify_nonce( $_POST['zita_nonce'], 'zita_site_nonce' ) ) {
+				wp_send_json_error( __( 'wp nonce not verify', 'zita-site-library' ) );
+				wp_die();
+			}
+	
+			if ( ! current_user_can( 'customize' ) ) {
+				wp_send_json_error( __( 'You have not "customize" access to import the Zita site library.', 'zita-site-library' ) );
+			}
+
+
+
 			$widgets_data = ( isset( $_POST['widgets_data'] ) ) ? $this->recursive_sanitize_text_field((object) json_decode( stripcslashes( $_POST['widgets_data'] ) )) : '';
 
 			if ( isset( $widgets_data ) ) {
@@ -316,6 +367,18 @@ class Zita_Site_Library_Ajax{
 		 *
 		 */
 		function import_end() {
+
+			
+			if ( ! isset( $_POST['zita_nonce'] ) || ! wp_verify_nonce( $_POST['zita_nonce'], 'zita_site_nonce' ) ) {
+				wp_send_json_error( __( 'wp nonce not verify', 'zita-site-library' ) );
+				wp_die();
+			}
+	
+			if ( ! current_user_can( 'customize' ) ) {
+				wp_send_json_error( __( 'You have not "customize" access to import the Zita site library.', 'zita-site-library' ) );
+			}
+
+			
 			do_action( 'zita_site_library_import_complete' );
 		}
 

@@ -125,6 +125,7 @@ if ( ! class_exists( 'Zita_Site_Library_Load' ) ) :
 				array(
 					'debug'           => ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) || isset( $_GET['debug'] ) ) ? true : false,
 					'ajax_url'         => esc_url( admin_url( 'admin-ajax.php' ) ),
+					'zita_nonce' 		=> wp_create_nonce( 'zita_site_nonce' ),
 					'siteURL'         => site_url(),
 					'getProText'      => __( 'Purchase', 'zita-site-library' ),
 					'getProURL'       => esc_url( 'https://themehunk.com/zita-pro-wordpress-theme' ),
@@ -154,7 +155,6 @@ if ( ! class_exists( 'Zita_Site_Library_Load' ) ) :
 						'importingXML'            => __( 'Importing Pages & Media..', 'zita-site-library' ),
 						'importingWidgets'        => __( 'Importing Widgets..', 'zita-site-library' ),
 						'importingOptions'        => __( 'Importing Options Data..', 'zita-site-library' ),
-
 						'gettingData'             => __( 'Getting Site Information..', 'zita-site-library' ),
 						'serverConfiguration'     => esc_url( 'https://wpzita.com/docs/?p=1314&utm_source=demo-import-panel&utm_campaign=import-error&utm_medium=wp-dashboard' ),
 					),
