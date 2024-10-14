@@ -146,14 +146,14 @@ class Zita_Site_Library_WXR_Importer {
 	 * @param array $mimes Already supported mime types.
 	 */
 	public function custom_upload_mimes( $mimes ) {
+		if ( current_user_can( 'manage_options' ) ) {
+			// Allow SVG files.
+			$mimes['svg']  = 'image/svg+xml';
+			$mimes['svgz'] = 'image/svg+xml';
 
-		// Allow SVG files.
-		$mimes['svg']  = 'image/svg+xml';
-		$mimes['svgz'] = 'image/svg+xml';
-
-		// Allow XML files.
-		$mimes['xml'] = 'application/xml';
-
+			// Allow XML files.
+			$mimes['xml'] = 'application/xml';
+   		 }
 		return $mimes;
 	}
 

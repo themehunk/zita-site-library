@@ -72,6 +72,13 @@ class Zita_Site_Library_WXR_Importer {
 	 */
 	function xml_data_import() {
 		if ( isset( $_REQUEST['zita_nonce'] ) && wp_verify_nonce( $_REQUEST['zita_nonce'], 'zita_sl_nonce' ) ) {
+
+
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( __( 'You have not "customize" access to import the Zita site library.', 'zita-site-library' ) );
+			}
+
+			
 			// Nonce is valid; process form data
 			// Start the event stream.
 			header( 'Content-Type: text/event-stream' );
@@ -151,14 +158,14 @@ class Zita_Site_Library_WXR_Importer {
 	 * @param array $mimes Already supported mime types.
 	 */
 	public function custom_upload_mimes( $mimes ) {
-
+		if ( current_user_can( 'manage_options' ) ) {
 		// Allow SVG files.
 		$mimes['svg']  = 'image/svg+xml';
 		$mimes['svgz'] = 'image/svg+xml';
 
 		// Allow XML files.
 		$mimes['xml'] = 'application/xml';
-
+		}
 		return $mimes;
 	}
 
