@@ -127,7 +127,7 @@ if ( ! class_exists( 'Zita_Site_Library_Load' ) ) :
 					'ajax_url'         => esc_url( admin_url( 'admin-ajax.php' ) ),
 					'zita_nonce' 		=> wp_create_nonce( 'zita_site_nonce' ),
 					'siteURL'         => site_url(),
-					'getProText'      => __( 'Purchase', 'zita-site-library' ),
+					'getProText'      => __( 'Buy Now', 'zita-site-library' ),
 					'getProURL'       => esc_url( 'https://themehunk.com/zita-pro-wordpress-theme' ),
 					'getUpgradeText'  => __( 'Upgrade', 'zita-site-library' ),
 					'getUpgradeURL'   => esc_url( 'https://themehunk.com/zita-pro-wordpress-theme' ),
