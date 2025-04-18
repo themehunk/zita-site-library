@@ -3,7 +3,7 @@ Contributors: wpzita
 Donate link: https://wpzita.com/
 Tags: demo, theme demos, one click import
 Requires at least: 5.5
-Tested up to: 6.7
+Tested up to: 6.8
 Stable tag: 1.6.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,8 +30,9 @@ Zita site library is a addon plugin for Zita WordPress theme. This plugin contai
 == Changelog ==
 
 = Version 1.6.5 08/04/2025 =
-*Update: Purchase text changed to Buy Now.
-*Update: Background color of Buy Now button changed.
+* Update: Purchase text changed to Buy Now.
+* Update: Background color of Buy Now button changed.
+* Update: Tested with WordPres 6.8.
 
 = Version 1.6.4 14/10/2024 =
 * SVG upload user security has been added.

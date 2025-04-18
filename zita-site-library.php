@@ -22,7 +22,7 @@ if ( ! defined( 'ALLOW_UNFILTERED_UPLOADS' ) ) {
 }
 
 if ( ! defined( 'ZITA_SITE_LIBRARY_NAME' ) ) {
-	define( 'ZITA_SITE_LIBRARY_NAME', __( 'Zita Site Library', 'zita-site-library' ) );
+	define( 'ZITA_SITE_LIBRARY_NAME', 'Zita Site Library');
 }
 
 if ( ! defined( 'ZITA_SITE_LIBRARY_FILE' ) ) {
