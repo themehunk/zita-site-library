@@ -29,10 +29,11 @@ Zita site library is a addon plugin for Zita WordPress theme. This plugin contai
 
 == Changelog ==
 
-= Version 1.6.5 08/04/2025 =
+= Version 1.6.5 18/04/2025 =
 * Update: Purchase text changed to Buy Now.
 * Update: Background color of Buy Now button changed.
 * Update: Tested with WordPres 6.8.
+* Update: Plugin showing site library with other theme also issue resolved.
 
 = Version 1.6.4 14/10/2024 =
 * SVG upload user security has been added.
