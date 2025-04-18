@@ -22,7 +22,7 @@ if ( ! defined( 'ALLOW_UNFILTERED_UPLOADS' ) ) {
 }
 
 if ( ! defined( 'ZITA_SITE_LIBRARY_NAME' ) ) {
-	define( 'ZITA_SITE_LIBRARY_NAME', __( 'Zita Site Library', 'zita-site-library' ) );
+	define( 'ZITA_SITE_LIBRARY_NAME', 'Zita Site Library');
 }
 
 if ( ! defined( 'ZITA_SITE_LIBRARY_FILE' ) ) {
@@ -42,6 +42,14 @@ if ( ! defined( 'ZITA_SITE_LIBRARY_URI' ) ) {
 	define( 'ZITA_SITE_LIBRARY_URI', plugins_url( '/', ZITA_SITE_LIBRARY_FILE ) );
 }
 
+function zita_site_library_text_domain(){
+	$theme = wp_get_theme();
+	$themeArr=array();
+	$themeArr[] = $theme->get( 'TextDomain' );
+	$themeArr[] = $theme->get( 'Template' );
+	return $themeArr;
+}
+
 if ( ! function_exists( 'zita_site_library_setup' ) ) :
 	require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
@@ -51,11 +59,15 @@ if ( ! function_exists( 'zita_site_library_setup' ) ) :
 	 * @since 1.4.7
 	 */
 	function zita_site_library_setup() {
+		$theme = zita_site_library_text_domain(); 
+	    if(in_array("zita", $theme)){
+
 	require_once ZITA_SITE_LIBRARY_DIR . 'inc/zita-site-library-page.php';
 	require_once ZITA_SITE_LIBRARY_DIR . 'inc/admin-load-page.php';
 	require_once ZITA_SITE_LIBRARY_DIR . 'notify/notify.php';
 
 	}
+}
 
 	add_action( 'plugins_loaded', 'zita_site_library_setup' );
 
