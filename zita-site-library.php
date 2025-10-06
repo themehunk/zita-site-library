@@ -3,7 +3,7 @@
  * Plugin Name: Zita Site Library
  * Plugin URI: https://wpzita.com/zita-site-library
  * Description: Zita site library is a addon plugin for Zita WordPress theme. This plugin contain lot of pre made sites for nearly all niches (like : Corporate, E-commerce, Small businesses ). You can import these sites with a single click.
- * Version: 1.6.5
+ * Version: 1.6.6
  * Author: themehunk
  * Author URI: https://wpzita.com
  * Text Domain: zita-site-library
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 if ( ! defined( 'ZITA_SITE_LIBRARY_VER' ) ) {
-	define( 'ZITA_SITE_LIBRARY_VER', '1.6.5' );
+	define( 'ZITA_SITE_LIBRARY_VER', '1.6.6' );
 }
 
 if ( ! defined( 'ALLOW_UNFILTERED_UPLOADS' ) ) {
