@@ -491,6 +491,7 @@ var ZitaSSEImport = {
 					data: {
 						'action'            : 'zita-plugins-active',
 						'init'              : $init,
+						'nonce'				: zitaAdmin.zita_nonce,
 					},
 				}).success(function (result) {
 					console.log(result.success);
@@ -583,6 +584,7 @@ var ZitaSSEImport = {
 					data: {
 						'action'            : 'zita-plugins-active',
 						'init'              : single_plugin.init,
+						'nonce'				: zitaAdmin.zita_nonce,
 					},
 					success: function( result ){
 
@@ -660,6 +662,7 @@ var ZitaSSEImport = {
 				data: {
 					'action'            : 'zita-plugins-active',
 					'init'              : $init,
+					'nonce'				: zitaAdmin.zita_nonce
 				},
 			})
 			.done(function (result) {

@@ -59,7 +59,16 @@ class Zita_Site_Library_Ajax{
 	}
 
 	public function plugins_active(){
-		if ( ! current_user_can( 'install_plugins' ) || !  sanitize_text_field($_POST['init']) || ! sanitize_text_field($_POST['init']) ) {
+
+		if (! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'zita_site_nonce' )) {
+		wp_send_json_error( [
+			'success' => false,
+			'message' => __( 'Nonce verification failed', 'zita-site-library' ), 
+		], 403 );
+	}
+
+
+		if ( ! current_user_can( 'manage_options' ) || !  sanitize_text_field($_POST['init']) || ! sanitize_text_field($_POST['init']) ) {
 						wp_send_json_error(
 							array(
 								'success' => false,
